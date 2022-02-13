@@ -2,25 +2,19 @@ let pagina = 1;
 const botonAnterior = document.getElementById("btnAnterior")
 const botonSiguiente = document.getElementById("btnSiguiente")
 
-
 botonSiguiente.addEventListener("click", () =>{
 
 if (pagina < 1000) {
 	pagina += 1
 	cargarPeliculas()
 	}
-
 })
-
-
 botonAnterior.addEventListener("click", () =>{
 	if (pagina > 1) {
 		pagina -= 1
 		cargarPeliculas()
 		}
 	})
-	
-
 
 const cargarPeliculas = async () => {
 	
@@ -44,12 +38,7 @@ const cargarPeliculas = async () => {
 					 </div> 
 					 `
 	 })
-
-
 	 const contenedor = document.getElementById("contenedor").innerHTML = peliculas
-
-
-
 	} else if (respuesta === 401) {
 		console.log("Pusistes Mal La Llave");
 	} else if (respuesta === 404) {
@@ -62,6 +51,5 @@ const cargarPeliculas = async () => {
 }
 
 }
-
 
 cargarPeliculas()
